@@ -1,0 +1,143 @@
+:root {
+  --background-color: #000;
+  --text-color: #fff;
+  --gold-color: #DAA520;
+  --gold-hover: #c69500;
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+}
+
+.payment-method-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.payment-method-modal-content {
+  background: #000;
+  border: 2px solid var(--gold-color);
+  border-radius: 4px;
+  padding: 1rem;
+  width: 90vw;
+  max-width: 400px;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.payment-method-modal-content h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.error-message {
+  background-color: #c62828;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.method-options {
+  margin-bottom: 1.25rem;
+}
+
+.method-option {
+  margin-bottom: 0.5rem;
+}
+
+.method-option label {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.method-option input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.input-field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-field-group label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.input-field-group input[type="email"],
+.input-field-group input[type="text"] {
+  background-color: #2c2c2c;
+  border: 1px solid var(--gold-color);
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.input-field-group input:focus {
+  outline: 2px solid var(--gold-color);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.actions button {
+  background-color: var(--gold-color);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  flex: 1 1 auto;
+  text-align: center;
+  font-size:1rem;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: var(--gold-hover);
+}
+
+.actions button:focus {
+  outline:2px solid var(--gold-color);
+  outline-offset:2px;
+}
+
+.actions .save-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+@media (max-width: 350px) {
+  .payment-method-modal-content {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

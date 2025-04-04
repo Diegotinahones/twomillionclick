@@ -1,0 +1,262 @@
+/* Reseteo y tipografía */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.game-container {
+  /* Puedes manejar márgenes o padding generales aquí si necesitas */
+}
+
+/* Encabezado */
+.game-header {
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+  position: relative;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-left {
+  left: 20px;
+}
+
+.header-center {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-right {
+  right: 20px;
+}
+
+.winners-link,
+.header-button,
+.username-link {
+  background: none;
+  border: none;
+  color: #DAA520;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: opacity 0.3s;
+}
+
+.winners-link:hover,
+.header-button:hover,
+.username-link:hover {
+  opacity: 0.7;
+}
+
+/* Zona principal */
+.game-main {
+  min-height: 100vh;
+  width: 100%;
+  background: #000;
+}
+
+.center-area {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.counter-number {
+  font-size: clamp(3rem, 10vw, 10rem);
+  text-align: center;
+}
+
+/* Botón +1 */
+.increment-button-container {
+  display: inline-block;
+  margin-top: 40px;
+  position: relative;
+}
+
+.increment-button {
+  background-color: #DAA520;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.increment-button:hover {
+  background-color: #c69500;
+}
+
+.increment-button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+/* Anillo de progreso */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* Puedes ajustar estilos extra si lo deseas */
+}
+
+.progress-ring circle {
+  stroke: #DAA520;
+  fill: transparent;
+  stroke-width: 8;
+  /* Usamos variable CSS para el offset dinámico */
+  stroke-dashoffset: var(--ring-offset, 0);
+}
+
+/* Milestones */
+.progress-milestone-container {
+  margin: 30px auto 10px;
+  width: 80%;
+  height: 4px;
+  background: #222;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.progress-milestone-bar {
+  height: 100%;
+  background: #DAA520;
+  /* Variable para manejar el % dinámicamente */
+  width: var(--progress-percentage, 0%);
+  transition: width 0.3s ease;
+}
+
+.milestone-label {
+  font-size: 0.9em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Info de clics */
+.free-clicks-info {
+  color: #DAA520;
+  margin-top: 10px;
+}
+
+.free-clicks-number {
+  font-weight: bold;
+}
+
+/* Efecto flash */
+.click-flash {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #DAA520;
+  border-radius: 50%;
+  opacity: 0.7;
+  pointer-events: none;
+  /* Variables para posición dinámica */
+  left: var(--flash-left, 0);
+  top: var(--flash-top, 0);
+}
+
+/* Contenedor del pote ganado */
+.pot-earned-container {
+  margin-top: 20px;
+}
+
+/* Footer */
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.footer-left,
+.footer-right {
+  flex: 0 0 auto;
+}
+
+.participate-button {
+  background-color: #DAA520;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.participate-button:hover {
+  background-color: #c69500;
+}
+
+.participate-button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error */
+.error-message {
+  text-align: center;
+  color: red;
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-left,
+  .header-center,
+  .header-right {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .game-header {
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .game-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .increment-button {
+    width: 80px;
+    height: 80px;
+    font-size: 1rem;
+  }
+}

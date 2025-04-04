@@ -1,0 +1,110 @@
+:root {
+  --background-color:#000;
+  --text-color:#fff;
+  --gold-color:#DAA520;
+  --gold-hover:#c69500;
+  --error-color:#b33;
+  --success-color:#0a0;
+  --input-bg:#3c3c3c;
+  --input-border:#666;
+  --font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --line-height:1.5;
+}
+
+.role-manager-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height:100vh;
+  padding: 2rem;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  box-sizing:border-box;
+}
+
+.role-manager-container h1 {
+  text-align:center;
+  margin-top:3rem;
+  margin-bottom:1.5rem;
+  font-size:2em;
+  font-weight:normal;
+}
+
+.role-message {
+  background-color: #113311;
+  color: var(--success-color);
+  padding:0.5rem;
+  border-radius:4px;
+  margin-bottom:1rem;
+  text-align:center;
+  font-size:1rem;
+}
+
+label {
+  display:block;
+  margin-bottom:0.5rem;
+  font-size:1rem;
+}
+
+select, input[type="radio"] {
+  margin-top:0.5rem;
+}
+
+select {
+  width:100%;
+  padding:0.8rem;
+  border:1px solid var(--input-border);
+  border-radius:4px;
+  background-color: var(--input-bg);
+  color:#fff;
+  margin-bottom:1rem;
+  transition:border-color 0.3s,box-shadow 0.3s;
+}
+
+select:focus {
+  outline:none;
+  border-color: var(--gold-color);
+  box-shadow:0 0 0 2px rgba(218,165,32,0.4);
+}
+
+.roles-options {
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+
+.roles-options label {
+  display:flex;
+  align-items:center;
+  font-size:1rem;
+}
+
+.roles-options input[type="radio"] {
+  margin-right:0.5rem;
+}
+
+.actions {
+  display:flex;
+  gap:1rem;
+  margin-top:1rem;
+}
+
+.actions button {
+  background: linear-gradient(to bottom, var(--gold-color), var(--gold-hover));
+  color:#000;
+  border:none;
+  border-radius:2px;
+  padding:0.8rem 1rem;
+  cursor:pointer;
+  flex:1 1 auto;
+  text-align:center;
+  font-size:1rem;
+  transition:background 0.3s;
+}
+
+.actions button:hover {
+  background: var(--gold-hover);
+}
+
+.actions button:focus {
+  outline:2px solid var(--gold-color);
+  outline-offset:2px;
+}

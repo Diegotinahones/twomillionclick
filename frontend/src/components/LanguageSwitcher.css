@@ -1,0 +1,27 @@
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 8px;
+}
+
+/* Etiqueta "Idioma:" */
+.language-label {
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+/* Select para elegir el idioma */
+.language-select {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Ajustes opcionales al pasar por encima */
+.language-select:hover {
+  border-color: #888;
+}
